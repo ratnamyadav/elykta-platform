@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import ButtonSignin from "./ButtonSignin";
-import logo from "@/app/icon.png";
 import config from "@/config";
 
 const links: {
@@ -14,20 +11,29 @@ const links: {
   label: string;
 }[] = [
   {
+    href: "/#features",
+    label: "Produit",
+  },
+  {
     href: "/#pricing",
     label: "Pricing",
   },
   {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
+    href: "/blog",
+    label: "Blog",
   },
 ];
 
-const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
+const cta: JSX.Element = (
+  <div className="flex flex-col lg:flex-row gap-3">
+    <Link href="/login" className="btn btn-outline border-white text-white hover:bg-white hover:text-[#0A0A0A]">
+      Se Connecter
+    </Link>
+    <Link href="/signup" className="btn text-white" style={{ backgroundColor: '#0066FF' }}>
+      Commencer
+    </Link>
+  </div>
+);
 
 // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
@@ -41,7 +47,7 @@ const Header = () => {
   }, [searchParams]);
 
   return (
-    <header className="bg-base-200">
+    <header className="bg-[#0A0A0A] border-b border-white/10">
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"
@@ -51,18 +57,9 @@ const Header = () => {
           <Link
             className="flex items-center gap-2 shrink-0 "
             href="/"
-            title={`${config.appName} homepage`}
+            title="ELYKTA homepage"
           >
-            <Image
-              src={logo}
-              alt={`${config.appName} logo`}
-              className="w-8"
-              placeholder="blur"
-              priority={true}
-              width={32}
-              height={32}
-            />
-            <span className="font-extrabold text-lg">{config.appName}</span>
+            <span className="font-extrabold text-2xl text-[#00FF88]" style={{ fontFamily: 'var(--font-heading)' }}>ELYKTA</span>
           </Link>
         </div>
         {/* Burger button to open menu on mobile */}
@@ -79,7 +76,7 @@ const Header = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 text-base-content"
+              className="w-6 h-6 text-white"
             >
               <path
                 strokeLinecap="round"
@@ -96,7 +93,7 @@ const Header = () => {
             <Link
               href={link.href}
               key={link.href}
-              className="link link-hover"
+              className="link link-hover text-white hover:text-[#0066FF] transition-colors"
               title={link.label}
             >
               {link.label}
@@ -111,7 +108,7 @@ const Header = () => {
       {/* Mobile menu, show/hide based on menu state. */}
       <div className={`relative z-50 ${isOpen ? "" : "hidden"}`}>
         <div
-          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
+          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-[#0A0A0A] sm:max-w-sm sm:ring-1 sm:ring-white/10 transform origin-right transition ease-in-out duration-300`}
         >
           {/* Your logo/name on small screens */}
           <div className="flex items-center justify-between">
@@ -120,16 +117,7 @@ const Header = () => {
               title={`${config.appName} homepage`}
               href="/"
             >
-              <Image
-                src={logo}
-                alt={`${config.appName} logo`}
-                className="w-8"
-                placeholder="blur"
-                priority={true}
-                width={32}
-                height={32}
-              />
-              <span className="font-extrabold text-lg">{config.appName}</span>
+              <span className="font-extrabold text-2xl text-[#00FF88]" style={{ fontFamily: 'var(--font-heading)' }}>ELYKTA</span>
             </Link>
             <button
               type="button"
@@ -143,7 +131,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-6 h-6 text-[#00FF88]"
               >
                 <path
                   strokeLinecap="round"
@@ -157,22 +145,32 @@ const Header = () => {
           {/* Your links on small screens */}
           <div className="flow-root mt-6">
             <div className="py-4">
-              <div className="flex flex-col gap-y-4 items-start">
+              <div className="flex flex-col gap-y-6 items-start font-medium">
                 {links.map((link) => (
                   <Link
                     href={link.href}
                     key={link.href}
-                    className="link link-hover"
+                    className="link link-hover text-white hover:text-[#0066FF] transition-colors no-underline"
                     title={link.label}
                   >
                     {link.label}
                   </Link>
                 ))}
+                <Link 
+                  href="/login" 
+                  className="link link-hover text-white hover:text-[#0066FF] transition-colors no-underline"
+                >
+                  Se Connecter
+                </Link>
               </div>
             </div>
-            <div className="divider"></div>
-            {/* Your CTA on small screens */}
-            <div className="flex flex-col">{cta}</div>
+            
+            {/* Commencer button */}
+            <div className="mt-2">
+              <Link href="/signup" className="btn text-white w-full rounded-none border-none" style={{ backgroundColor: '#0066FF' }}>
+                Commencer
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -181,3 +179,4 @@ const Header = () => {
 };
 
 export default Header;
+
