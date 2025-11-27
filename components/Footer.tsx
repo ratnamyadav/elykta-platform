@@ -10,7 +10,7 @@ const Footer = () => {
               ELYKTA
             </h3>
             <p className="text-sm text-[#B0B0B0]">
-              L'usine à êtres numériques
+              L&apos;usine à êtres numériques
             </p>
           </div>
           

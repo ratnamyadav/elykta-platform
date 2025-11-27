@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +9,9 @@ import { Badge } from "@/components/ui/badge";
 export default function Page() {
   return (
     <>
-      <Header />
+      <Suspense>
+        <Header />
+      </Suspense>
       
       <main className="bg-[#0A0A0A]">
         {/* Hero Section */}
@@ -134,7 +137,7 @@ export default function Page() {
               <Card className="bg-[#1A1A2E] border-2 border-[#0066FF] rounded-lg p-6 hover:border-[#00FF88] hover:shadow-lg hover:shadow-[#00FF88]/20 hover:-translate-y-1 transition-all duration-300">
                 <div className="text-5xl mb-4 text-center" style={{ fontSize: '48px' }}>📊</div>
                 <h4 className="text-lg font-bold text-white mb-3 text-center">Engagement variable</h4>
-                <p className="text-base text-[#B0B0B0] text-center">Performance dépend de l'algorithme et motivation</p>
+                <p className="text-base text-[#B0B0B0] text-center">Performance dépend de l&apos;algorithme et motivation</p>
               </Card>
               
               <Card className="bg-[#1A1A2E] border-2 border-[#0066FF] rounded-lg p-6 hover:border-[#00FF88] hover:shadow-lg hover:shadow-[#00FF88]/20 hover:-translate-y-1 transition-all duration-300">
@@ -227,7 +230,7 @@ export default function Page() {
                 au lieu de 5,000€+
               </p>
               <p className="text-2xl font-bold text-[#00FF88]">
-                95% d'économies
+                95% d&apos;économies
               </p>
             </Card>
             

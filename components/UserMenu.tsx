@@ -28,7 +28,7 @@ export default function UserMenu({ user, fullName }: UserMenuProps) {
       await supabase.auth.signOut();
       toast.success("Déconnexion réussie");
       router.push("/");
-    } catch (error) {
+    } catch {
       toast.error("Erreur lors de la déconnexion");
     }
   };
