@@ -164,7 +164,7 @@ export default function LoginPage() {
                 href="/signup" 
                 className="text-brand-primary hover:text-[#0052CC] font-semibold transition-colors"
               >
-                S'inscrire
+                S&apos;inscrire
               </Link>
             </p>
           </div>
