@@ -38,6 +38,14 @@ export default function LoginPage() {
     },
   });
 
+  const onError = () => {
+    if (errors.email) {
+      toast.error(errors.email.message || "Email invalide");
+    } else if (errors.password) {
+      toast.error(errors.password.message || "Mot de passe requis");
+    }
+  };
+
   const onSubmit = async (data: LoginFormValues) => {
     setIsLoading(true);
 
@@ -97,7 +105,7 @@ export default function LoginPage() {
             </h1>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-text-secondary">
                 Email
@@ -109,9 +117,6 @@ export default function LoginPage() {
                 error={!!errors.email}
                 {...register("email")}
               />
-              {errors.email && (
-                <p className="text-red-500 text-xs">{errors.email.message}</p>
-              )}
             </div>
 
             <div className="space-y-2">
@@ -120,7 +125,7 @@ export default function LoginPage() {
                   Mot de passe
                 </Label>
                 <Link
-                  href="#forgot"
+                  href="/forgot-password"
                   className="text-sm text-brand-primary hover:text-primary transition-colors"
                 >
                   Mot de passe oublié?
@@ -133,9 +138,6 @@ export default function LoginPage() {
                 error={!!errors.password}
                 {...register("password")}
               />
-              {errors.password && (
-                <p className="text-red-500 text-xs">{errors.password.message}</p>
-              )}
             </div>
 
             <Button

@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 // <CHANGE> Import Elykta fonts: Playfair Display, Inter, JetBrains Mono
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
+import ClientLayout from "@/components/LayoutClient"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -44,7 +45,7 @@ export default function RootLayout({
     // <CHANGE> Set lang to French, force dark mode
     <html lang="fr" className="dark">
       <body className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )
