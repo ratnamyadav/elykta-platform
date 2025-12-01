@@ -1,8 +1,8 @@
-import { HeroSection } from "@/components/hero-section"
-import { ProblemSection } from "@/components/problem-section"
-import { SolutionSection } from "@/components/solution-section"
-import { PricingSection } from "@/components/pricing-section"
-import { Footer } from "@/components/footer"
+import { HeroSection } from "@/components/HeroSection"
+import { ProblemSection } from "@/components/ProblemSection"
+import { SolutionSection } from "@/components/SolutionSection"
+import { PricingSection } from "@/components/PricingSection"
+import { Footer } from "@/components/Footer"
 
 export default function HomePage() {
   return (

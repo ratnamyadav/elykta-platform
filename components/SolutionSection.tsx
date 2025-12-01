@@ -1,7 +1,7 @@
 
 import Image from "next/image"
 import artistPaletteImage from "@/public/artist-palette.png"
-import brainImage from "@/public/Brain.png"
+import brainImage from "@/public/brain.png"
 import counterclockwiseArrowsButtonImage from "@/public/counterclockwise-arrows-button.png"
 import highVoltageImage from "@/public/high-voltage.png"
 import puzzlePieceImage from "@/public/puzzle-piece.png"
