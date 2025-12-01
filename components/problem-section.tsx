@@ -1,0 +1,76 @@
+import { Card, CardContent } from "@/components/ui/card"
+import { Ban } from "lucide-react"
+import Image from "next/image"
+import moneyBagImage from "@/public/money-bag.png"
+import alarmClockImage from "@/public/alarm-clock.png"
+import faceSweatImage from "@/public/face-sweat.png"
+import bombImage from "@/public/bomb.png"
+import chartDecreasingImage from "@/public/chart-decreasing.png"
+import banImage from "@/public/ban.png"
+
+
+const problems = [
+  {
+    icon: <Image src={moneyBagImage} alt="Money bag" width={48} height={48} />,
+    title: "5,000 - 50,000€ par mois",
+    description: "Budget inaccessible pour 90% des entreprises",
+  },
+  {
+    icon: <Image src={alarmClockImage} alt="Alarm clock" width={48} height={48} />,
+    title: "Disponibilité limitée",
+    description: "8h/jour maximum, weekends off, vacances",
+  },
+  {
+    icon: <Image src={faceSweatImage} alt="Face sweat" width={48} height={48} />,
+    title: "Inconsistance",
+    description: "Humeur variable, fatigue, erreurs humaines",
+  },
+  {
+    icon: <Image src={bombImage} alt="Bomb" width={48} height={48} />,
+    title: "Risque réputation",
+    description: "Scandales personnels impactent votre marque",
+  },
+  {
+    icon: <Image src={chartDecreasingImage} alt="Chart decreasing" width={48} height={48} />,
+    title: "Engagement variable",
+    description: "Performance dépend de l'algorithme et motivation",
+  },
+  {
+    icon: <Ban className="w-12 h-12 text-[#C84C2F]" />,
+    title: "Hors budget PME",
+    description: "Les petites entreprises sont exclues de ce canal",
+  },
+]
+
+export function ProblemSection() {
+  return (
+    <section className="px-4 py-20 md:py-32">
+      <div className="max-w-6xl mx-auto">
+        {/* Section header - French text copy-pasted exactly */}
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Le Problème</h2>
+          <h3 className="text-xl sm:text-2xl text-[#EDEDED]">Les Influenceurs Humains Coûtent Une Fortune</h3>
+        </div>
+
+        {/* Problem cards grid - 2x3 on desktop, stack on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {problems.map((problem, index) => (
+            <Card
+              key={index}
+              className="bg-[#0A0A0A] border-[#333333] hover:border-[#C84C2F] transition-colors duration-300"
+            >
+              <CardContent className="p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {problem.icon}
+                  {/* <problem.icon className="w-12 h-12 text-[#C84C2F]" /> */}
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{problem.title}</h4>
+                <p className="text-[#888888]">{problem.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

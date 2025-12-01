@@ -1,51 +1,51 @@
-import { ReactNode } from "react";
-import { Montserrat, Inter, JetBrains_Mono } from "next/font/google";
-import { Viewport } from "next";
-import { getSEOTags } from "@/libs/seo";
-import ClientLayout from "@/components/LayoutClient";
-import config from "@/config";
-import "./globals.css";
+import type React from "react"
+import type { Metadata, Viewport } from "next"
+// <CHANGE> Import Elykta fonts: Playfair Display, Inter, JetBrains Mono
+import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google"
+import "./globals.css"
 
-const montserrat = Montserrat({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700", "800", "900"]
-});
+  variable: "--font-serif",
+  display: "swap",
+})
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-body"
-});
+  variable: "--font-sans",
+  display: "swap",
+})
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono"
-});
+  variable: "--font-mono",
+  display: "swap",
+})
 
-const font = inter;
+export const metadata: Metadata = {
+  title: "Elykta - Créez Votre Égérie IA En 7 Jours",
+  description:
+    "Donnez un visage, une voix et une personnalité à votre marque dans le monde digital. L'usine à êtres numériques.",
+  generator: "v0.app",
+}
 
 export const viewport: Viewport = {
-	// Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
-	themeColor: config.colors.main,
-	width: "device-width",
-	initialScale: 1,
-};
+  themeColor: "#050505",
+  width: "device-width",
+  initialScale: 1,
+}
 
-// This adds default SEO tags to all pages in our app.
-// You can override them in each page passing params to getSOTags() function.
-export const metadata = getSEOTags();
-
-export default function RootLayout({ children }: { children: ReactNode }) {
-	return (
-		<html
-			lang="fr"
-			data-theme={config.colors.theme}
-			className={`${font.className} ${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-		>
-			<body className="bg-[#0A0A0A] text-white">
-				{/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-				<ClientLayout>{children}</ClientLayout>
-			</body>
-		</html>
-	);
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    // <CHANGE> Set lang to French, force dark mode
+    <html lang="fr" className="dark">
+      <body className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        {children}
+      </body>
+    </html>
+  )
 }
