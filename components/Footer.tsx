@@ -8,7 +8,7 @@ export function Footer() {
           {/* Logo and tagline - French text copy-pasted exactly */}
           <div>
             <h3 className="font-serif text-2xl font-bold text-white mb-2">ELYKTA</h3>
-            <p className="text-[#888888]">L'usine à êtres numériques</p>
+            <p className="text-[#888888]">L&apos;usine à êtres numériques</p>
           </div>
 
           {/* Navigation links - French text */}

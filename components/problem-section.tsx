@@ -6,7 +6,6 @@ import alarmClockImage from "@/public/alarm-clock.png"
 import faceSweatImage from "@/public/face-sweat.png"
 import bombImage from "@/public/bomb.png"
 import chartDecreasingImage from "@/public/chart-decreasing.png"
-import banImage from "@/public/ban.png"
 
 
 const problems = [

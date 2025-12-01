@@ -1,4 +1,4 @@
-import { Sparkles, MessageSquare, Database, User, Clock } from "lucide-react"
+
 import Image from "next/image"
 import artistPaletteImage from "@/public/artist-palette.png"
 import brainImage from "@/public/Brain.png"
@@ -64,7 +64,7 @@ export function SolutionSection() {
           <h3 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-2">299€/mois</h3>
           <p className="text-xl text-[#EDEDED] mb-4">au lieu de 5,000€+</p>
           <span className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold">
-            95% d'économies
+            95% d&apos;économies
           </span>
         </div>
       </div>
