@@ -22,17 +22,10 @@ export function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="bg-[#C84C2F] hover:bg-[#D65A31] text-white rounded-[50px] px-8 py-6 text-lg font-semibold transition-all"
-          >
+          <Button size="lg">
             Créer Mon Avatar
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-[#333333] hover:border-[#C84C2F] bg-transparent text-white rounded-[50px] px-8 py-6 text-lg font-semibold transition-all hover:bg-[#C84C2F]/10"
-          >
+          <Button variant="outline" size="lg">
             Voir la Démo
           </Button>
         </div>

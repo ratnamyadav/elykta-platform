@@ -98,11 +98,9 @@ export function PricingSection() {
 
               <CardFooter className="px-6 pb-6">
                 <Button
-                  className={`w-full rounded-[50px] py-6 font-semibold transition-all ${
-                    plan.popular
-                      ? "bg-[#C84C2F] hover:bg-[#D65A31] text-white"
-                      : "bg-[#1A1A1A] hover:bg-[#C84C2F] text-white border border-[#333333] hover:border-[#C84C2F]"
-                  }`}
+                  variant={plan.popular ? "default" : "outline"}
+                  size="lg"
+                  className="w-full"
                 >
                   {plan.cta}
                 </Button>
