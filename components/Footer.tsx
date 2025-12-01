@@ -13,16 +13,16 @@ export function Footer() {
 
           {/* Navigation links - French text */}
           <nav className="flex flex-wrap justify-center gap-6">
-            <Link href="#features" className="text-[#888888] hover:text-[#C84C2F] transition-colors">
+            <Link href="#features" className="text-[#888888] hover:text-primary transition-colors">
               Produit
             </Link>
-            <Link href="#pricing" className="text-[#888888] hover:text-[#C84C2F] transition-colors">
+            <Link href="#pricing" className="text-[#888888] hover:text-primary transition-colors">
               Pricing
             </Link>
-            <Link href="/blog" className="text-[#888888] hover:text-[#C84C2F] transition-colors">
+            <Link href="/blog" className="text-[#888888] hover:text-primary transition-colors">
               Blog
             </Link>
-            <Link href="/contact" className="text-[#888888] hover:text-[#C84C2F] transition-colors">
+            <Link href="/contact" className="text-[#888888] hover:text-primary transition-colors">
               Contact
             </Link>
           </nav>

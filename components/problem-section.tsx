@@ -36,7 +36,7 @@ const problems = [
     description: "Performance dépend de l'algorithme et motivation",
   },
   {
-    icon: <Ban className="w-12 h-12 text-[#C84C2F]" />,
+    icon: <Ban className="w-12 h-12 text-primary" />,
     title: "Hors budget PME",
     description: "Les petites entreprises sont exclues de ce canal",
   },
@@ -57,7 +57,7 @@ export function ProblemSection() {
           {problems.map((problem, index) => (
             <Card
               key={index}
-              className="bg-[#0A0A0A] border-[#333333] hover:border-[#C84C2F] transition-colors duration-300"
+              className="bg-[#0A0A0A] border-border hover:border-primary transition-colors duration-300"
             >
               <CardContent className="p-6 text-center">
                 <div className="flex justify-center mb-4">

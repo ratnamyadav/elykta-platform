@@ -121,7 +121,7 @@ export default function LoginPage() {
                 </Label>
                 <Link
                   href="#forgot"
-                  className="text-sm text-brand-primary hover:text-[#0052CC] transition-colors"
+                  className="text-sm text-brand-primary hover:text-primary transition-colors"
                 >
                   Mot de passe oublié?
                 </Link>
@@ -141,7 +141,8 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-brand-primary hover:bg-[#0052CC] text-white h-12 text-lg font-semibold"
+              size="lg"
+              className="w-full"
             >
               {isLoading ? (
                 <span className="flex items-center gap-2">
@@ -162,7 +163,7 @@ export default function LoginPage() {
               Pas de compte?{" "}
               <Link 
                 href="/signup" 
-                className="text-brand-primary hover:text-[#0052CC] font-semibold transition-colors"
+                className="text-brand-primary hover:text-primary font-semibold transition-colors"
               >
                 S&apos;inscrire
               </Link>

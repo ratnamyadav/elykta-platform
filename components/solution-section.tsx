@@ -48,7 +48,7 @@ export function SolutionSection() {
         <div className="space-y-6 mb-12">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-[#1A1A1A]/50 transition-colors">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#C84C2F]/10 flex items-center justify-center">
+              <div className="shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 {feature.icon}
               </div>
               <div>
@@ -60,10 +60,10 @@ export function SolutionSection() {
         </div>
 
         {/* Highlight box - French text copy-pasted exactly */}
-        <div className="glass border-2 border-[#C84C2F] rounded-2xl p-8 text-center">
+        <div className="glass border-2 border-primary rounded-2xl p-8 text-center">
           <h3 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-2">299€/mois</h3>
           <p className="text-xl text-[#EDEDED] mb-4">au lieu de 5,000€+</p>
-          <span className="inline-block bg-[#C84C2F] text-white px-4 py-2 rounded-full font-semibold">
+          <span className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold">
             95% d'économies
           </span>
         </div>

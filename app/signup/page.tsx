@@ -215,7 +215,8 @@ export default function SignupPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-brand-primary hover:bg-[#0052CC] text-white h-12 text-lg font-semibold"
+              size="lg"
+              className="w-full"
             >
               {isLoading ? (
                 <span className="flex items-center gap-2">
@@ -236,7 +237,7 @@ export default function SignupPage() {
               Déjà un compte?{" "}
               <Link 
                 href="/login" 
-                className="text-brand-primary hover:text-[#0052CC] font-semibold transition-colors"
+                className="text-primary hover:text-accent font-semibold transition-colors"
               >
                 Se connecter
               </Link>

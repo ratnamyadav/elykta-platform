@@ -49,7 +49,7 @@ const pricingPlans = [
 
 export function PricingSection() {
   return (
-    <section className="px-4 py-20 md:py-32">
+    <section id="pricing" className="px-4 py-20 md:py-32">
       <div className="max-w-6xl mx-auto">
         {/* Section header - French text */}
         <div className="text-center mb-16">
@@ -61,16 +61,16 @@ export function PricingSection() {
           {pricingPlans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative bg-[#0A0A0A] border-[#333333] flex flex-col ${
+              className={`relative bg-[#0A0A0A] border-border flex flex-col ${
                 plan.popular
-                  ? "border-[#C84C2F] shadow-[0_0_30px_rgba(200,76,47,0.2)] scale-[1.02] md:scale-105"
-                  : "hover:border-[#C84C2F]"
+                  ? "border-primary shadow-[0_0_30px_rgba(200,76,47,0.2)] scale-[1.02] md:scale-105"
+                  : "hover:border-primary"
               } transition-all duration-300`}
             >
               {/* Popular badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#C84C2F] text-white text-sm font-semibold px-4 py-1 rounded-full">
+                  <span className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-1 rounded-full">
                     ★ POPULAIRE
                   </span>
                 </div>
@@ -89,7 +89,7 @@ export function PricingSection() {
                 <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-green-500 shrink-0" />
                       <span className="text-[#EDEDED]">{feature}</span>
                     </li>
                   ))}
