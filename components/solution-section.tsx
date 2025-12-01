@@ -1,28 +1,34 @@
 import { Sparkles, MessageSquare, Database, User, Clock } from "lucide-react"
+import Image from "next/image"
+import artistPaletteImage from "@/public/artist-palette.png"
+import brainImage from "@/public/Brain.png"
+import counterclockwiseArrowsButtonImage from "@/public/counterclockwise-arrows-button.png"
+import highVoltageImage from "@/public/high-voltage.png"
+import puzzlePieceImage from "@/public/puzzle-piece.png"
 
 const features = [
   {
-    icon: Sparkles,
+    icon: <Image src={highVoltageImage} alt="High voltage" width={48} height={48} />,
     title: "Créé en 7 jours",
     description: "Votre marque, votre style unique",
   },
   {
-    icon: MessageSquare,
+    icon: <Image src={brainImage} alt="Brain" width={48} height={48} />,
     title: "Conversations naturelles",
     description: "Powered by Claude 4 + GPT-4",
   },
   {
-    icon: Database,
+    icon: <Image src={puzzlePieceImage} alt="Brain" width={48} height={48} />,
     title: "Mémoire infaillible",
     description: "Se souvient de chaque interaction",
   },
   {
-    icon: User,
+    icon: <Image src={artistPaletteImage} alt="Puzzle piece" width={48} height={48} />,
     title: "Apparence cohérente",
     description: "Même visage, même style (LoRA 90%)",
   },
   {
-    icon: Clock,
+    icon: <Image src={counterclockwiseArrowsButtonImage} alt="Puzzle piece" width={48} height={48} />,
     title: "Disponible 24/7",
     description: "Jamais fatiguée, toujours on-brand",
   },
@@ -43,7 +49,7 @@ export function SolutionSection() {
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-[#1A1A1A]/50 transition-colors">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#C84C2F]/10 flex items-center justify-center">
-                <feature.icon className="w-6 h-6 text-[#C84C2F]" />
+                {feature.icon}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-1">{feature.title}</h4>
