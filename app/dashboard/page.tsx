@@ -30,7 +30,7 @@ export default async function Dashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] p-8">
+    <main className="min-h-screen p-8">
       {/* Top Right User Menu */}
       <div className="flex justify-end mb-8">
         <UserMenu user={user} fullName={fullName} />
@@ -38,10 +38,10 @@ export default async function Dashboard() {
 
       {/* Main Dashboard Content */}
       <div className="max-w-2xl mx-auto">
-        <Card className="border-2 border-[#0066FF] bg-[#1A1A2E] p-12">
+        <Card className="glass border border-white/10 p-8">
           <div className="flex flex-col items-center text-center space-y-6">
             {/* Profile Icon */}
-            <div className="w-16 h-16 rounded-full border-2 border-[#0066FF] bg-[#0066FF]/20 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full border-2 border-brand-primary bg-brand-primary/20 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -61,21 +61,21 @@ export default async function Dashboard() {
 
             {/* Welcome Message */}
             <h1 
-              className="text-4xl md:text-5xl font-bold text-[#00FF88]"
+              className="text-4xl md:text-5xl font-bold text-brand-accent"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Bienvenue sur Elykta!
             </h1>
 
             {/* Coming Soon Message */}
-            <p className="text-xl text-[#E0E0E0]">
+            <p className="text-xl text-text-secondary">
               Votre dashboard arrive bientôt...
             </p>
 
             {/* Create Avatar Button */}
             <Button
               disabled
-              className="bg-[#0066FF] hover:bg-[#0052CC] text-white px-8 py-6 text-lg font-semibold h-auto mt-4 opacity-75 cursor-not-allowed"
+              className="mt-4 opacity-75 cursor-not-allowed"
             >
               Créer Mon Premier Avatar (Coming Soon)
             </Button>
