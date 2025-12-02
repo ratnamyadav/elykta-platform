@@ -6,6 +6,7 @@ import alarmClockImage from "@/public/alarm-clock.png"
 import faceSweatImage from "@/public/face-sweat.png"
 import bombImage from "@/public/bomb.png"
 import chartDecreasingImage from "@/public/chart-decreasing.png"
+import aiHelperImage from "@/public/ai-helper.webp"
 
 
 const problems = [
@@ -46,9 +47,19 @@ export function ProblemSection() {
     <section className="px-4 py-20 md:py-32">
       <div className="max-w-6xl mx-auto">
         {/* Section header - French text copy-pasted exactly */}
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Le Problème</h2>
-          <h3 className="text-xl sm:text-2xl text-[#EDEDED]">Les Influenceurs Humains Coûtent Une Fortune</h3>
+        <div className="relative text-center mb-16 px-8 md:px-16 lg:px-24">
+          {/* Image on the left side, overlapping the heading */}
+          <div className="absolute left-0 top-1/2 -translate-y-[430px] -translate-x-[50px] z-10 lg:-translate-y-[360px] lg:-translate-x-[-50px] xl:-translate-y-[260px] xl:-translate-x-[180px]">
+            <Image
+              src={aiHelperImage}
+              alt="AI Helper"
+              width={300}
+              height={447}
+              className=" object-contain"
+            />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 relative z-20">Le Problème</h2>
+          <h3 className="text-xl sm:text-2xl text-[#EDEDED] relative z-20">Les Influenceurs Humains Coûtent Une Fortune</h3>
         </div>
 
         {/* Problem cards grid - 2x3 on desktop, stack on mobile */}
