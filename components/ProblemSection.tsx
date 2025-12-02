@@ -55,7 +55,9 @@ export function ProblemSection() {
               alt="AI Helper"
               width={300}
               height={447}
-              className=" object-contain"
+              className="object-contain"
+              priority
+              fetchPriority="high"
             />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 relative z-20">Le Problème</h2>
